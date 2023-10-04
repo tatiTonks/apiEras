@@ -1,0 +1,57 @@
+<section style="background-image: url('assets/img/222.jpg')">
+<div class="d-flex justify-content-center my-3 py-5">
+<form class="form" [formGroup]="usuarioForm" (ngSubmit)="registroUsuario()">
+    <p class="title">Register </p>
+    <p class="message">Registrate para acceder a la información de nuestra API </p>
+        <div class="flex">
+        <label>
+            <input required="" placeholder="" type="text" class="input" formControlName="nombre">
+            <span>Nombre</span>
+
+            <div *ngIf="usuarioForm.get('nombre')?.hasError('required') && usuarioForm.get('nombre')?.touched" class="fw-bold text-danger">El campo nombre es requerido</div>
+            <div *ngIf="usuarioForm.get('nombre')?.hasError('pattern') && usuarioForm.get('nombre')?.touched" class="fw-bold text-danger">El campo nombre es invalido</div>
+
+        </label>
+
+        <label>
+            <input required="" placeholder="" type="text" class="input" formControlName="apellido">
+            <span>Apellido</span>
+
+            <div *ngIf="usuarioForm.get('apellido')?.hasError('required') && usuarioForm.get('apellido')?.touched" class="fw-bold text-danger">El campo apellido es requerido</div>
+            <div *ngIf="usuarioForm.get('apellido')?.hasError('pattern') && usuarioForm.get('apellido')?.touched" class="fw-bold text-danger">El campo apellido es invalido</div>
+
+        </label>
+    </div>
+
+    <label>
+        <input required="" placeholder="" type="email" class="input" formControlName="email">
+        <span>Email</span>
+        <div *ngIf="usuarioForm.get('email')?.hasError('required') && usuarioForm.get('email')?.touched" class="fw-bold text-danger">El campo correo es requerido</div>
+
+    </label>
+
+    <label>
+        <input required="" placeholder="" type="" class="input" formControlName="contrasena">
+        <span>Contraseña</span>
+        <div *ngIf="usuarioForm.get('contrasena')?.hasError('required') && usuarioForm.get('contrasena')?.touched" class="fw-bold text-danger">El campo contraseña es requerido</div>
+        <div *ngIf="usuarioForm.get('contrasena')?.hasError('minlength') && usuarioForm.get('contrasena')?.touched" class="fw-bold text-danger">El campo contraseña debe contener como mínimo 5 caracteres</div>
+
+    </label>
+    <label>
+        <input required="" placeholder="" type="password" class="input" id="txtPass2" #txtPass2 (keyup)="rectificarPass()">
+        <span>Confirmar contraseña</span>
+        <div class="mb-3 d-none" #alertPassword>
+            <div class="alert alert-danger" role="alert">
+                Sus contraseñas no son iguales
+            </div>
+        </div>
+    </label>
+    <label>
+        <input required="" placeholder="" type="date" class="input" formControlName="fec_nac">
+        <span>Fecha de Nacimiento</span>
+    </label>
+    <button class="submit">Submit</button>
+    <p class="signin">¿Ya tienes una cueta? <a href="http://localhost:4200/login">Iniciar Sesión</a> </p>
+</form>
+</div>
+</section>

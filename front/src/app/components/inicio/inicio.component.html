@@ -1,0 +1,26 @@
+
+<section class="img "
+    style="background-image: url('assets/img/back2.jpg'); background-size: cover;">
+
+<div class="row d-flex p-4 justify-content-center">
+    <div class="d-flex justify-content-center">
+        <h1 class="mi-letra color" style="color: whitesmoke;">
+            The Eras Tour
+        </h1>
+    </div>
+    <div class="card-container d-flex justify-content-center col-sm-6 mb-3 mb-sm-0 p-4 " *ngFor="let vestuario of listaVestuarios">
+        <div class="card">
+        <div class="img-content w-100">
+            <img src="{{vestuario.imagen}}" style="background-size: cover" alt="">
+        </div>
+        <div class="content">
+          <p class="heading">{{vestuario.nombre}}"</p>
+          <div>  Diseñador: {{vestuario.designer}}  </div>
+           <div> Era: {{vestuario.era}} </div>
+
+        </div>
+      </div>
+      </div>
+    </div>
+
+</section>

@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "jeje";
+    src: url(assets/fonts/Pistilli-Roman.otf);
+}
+
+.mi-letra{
+    font-family: "jeje";
+}
+
